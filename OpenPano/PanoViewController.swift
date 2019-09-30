@@ -66,7 +66,8 @@ class PanoViewController: UIViewController {
                             return
                         }
                         self.stitchingQueue.async {
-                            self.pano = StitchingWrapper.stitchImages(ofPaths: imagePaths)
+                            let image = StitchingWrapper.stitchImages(ofPaths: imagePaths)?.rotate(byDegrees: 90)
+                            self.pano = image
                             if self.pano != nil {
                                 DispatchQueue.main.async {
                                     self.imageView.image = self.pano

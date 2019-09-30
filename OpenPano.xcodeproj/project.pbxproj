@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13133D2623421E7700C4F762 /* config.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 13133D2523421E7700C4F762 /* config.cfg */; };
 		596737BA2311293A004D6470 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596737A22311293A004D6470 /* Array+Extensions.swift */; };
 		596737BB2311293A004D6470 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596737A32311293A004D6470 /* UIImageView+Extensions.swift */; };
 		596737BC2311293A004D6470 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596737A42311293A004D6470 /* UIViewController+Extensions.swift */; };
@@ -23,7 +24,6 @@
 		596737C72311293A004D6470 /* ItemWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596737B42311293A004D6470 /* ItemWithImage.swift */; };
 		596737C82311293A004D6470 /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596737B62311293A004D6470 /* GradientSlider.swift */; };
 		596737C92311293A004D6470 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596737B72311293A004D6470 /* Button.swift */; };
-		596737CA2311293A004D6470 /* config.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 596737B82311293A004D6470 /* config.cfg */; };
 		596737CB2311293A004D6470 /* PanoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596737B92311293A004D6470 /* PanoViewController.swift */; };
 		59D27B1F23117D8700ACFFF9 /* libopano.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59D27B1D23117D8100ACFFF9 /* libopano.framework */; };
 		59D27B2023117D8700ACFFF9 /* libopano.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59D27B1D23117D8100ACFFF9 /* libopano.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,6 +48,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13133D2523421E7700C4F762 /* config.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.cfg; sourceTree = "<group>"; };
 		596737A22311293A004D6470 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		596737A32311293A004D6470 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		596737A42311293A004D6470 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		596737B42311293A004D6470 /* ItemWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemWithImage.swift; sourceTree = "<group>"; };
 		596737B62311293A004D6470 /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
 		596737B72311293A004D6470 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		596737B82311293A004D6470 /* config.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.cfg; sourceTree = "<group>"; };
 		596737B92311293A004D6470 /* PanoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanoViewController.swift; sourceTree = "<group>"; };
 		59D27B1D23117D8100ACFFF9 /* libopano.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libopano.framework; path = libopano_Release/libopano.framework; sourceTree = "<group>"; };
 		59E808AB2310E1FE002ACF25 /* OpenPano.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenPano.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,7 +197,7 @@
 				596737A02311293A004D6470 /* AlertsAndPickers */,
 				596737B92311293A004D6470 /* PanoViewController.swift */,
 				59E808AE2310E1FE002ACF25 /* AppDelegate.swift */,
-				596737B82311293A004D6470 /* config.cfg */,
+				13133D2523421E7700C4F762 /* config.cfg */,
 				59E808B52310E200002ACF25 /* Assets.xcassets */,
 				59E808B22310E1FE002ACF25 /* Main.storyboard */,
 				59E808B72310E200002ACF25 /* LaunchScreen.storyboard */,
@@ -267,7 +267,7 @@
 			files = (
 				59E808B92310E200002ACF25 /* LaunchScreen.storyboard in Resources */,
 				59E808B62310E200002ACF25 /* Assets.xcassets in Resources */,
-				596737CA2311293A004D6470 /* config.cfg in Resources */,
+				13133D2623421E7700C4F762 /* config.cfg in Resources */,
 				59E808B42310E1FE002ACF25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,18 +443,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MDWBDEPC5G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libopano_Release",
 				);
 				INFOPLIST_FILE = OpenPano/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.OpenPano;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serglam.OpenPano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -466,18 +467,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MDWBDEPC5G;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libopano_Release",
 				);
 				INFOPLIST_FILE = OpenPano/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.OpenPano;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serglam.OpenPano;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
