@@ -24,7 +24,8 @@ class PanoViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        selectAndStitch()
+//        selectAndStitch()
+        stitchTestImages()
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +83,41 @@ class PanoViewController: UIViewController {
         }))
         
         self.present(welcomeAlertVC, animated: true, completion: nil)
+    }
+    
+    private func stitchTestImages() {
+        
+        var imageNames: [String] = []
+        for i in (2...5).reversed() {
+            // down - 0...5 6...10 12...21
+            // Failed to stitch - 10...12
+            // error: Failed to find hfactor
+            
+            // up 0...2 4...21
+            // Failed to stitch - 2...5
+            // error: Failed to find hfactor
+            imageNames.append("up-\(i)")
+        }
+        let imagePaths : [String] = imageNames.compactMap{ return getFilePathByName(name: $0) }
+        
+        self.stitchingQueue.async {
+            let image = StitchingWrapper.stitchImages(ofPaths: imagePaths)?.rotate(byDegrees: 90)
+            self.pano = image
+            if self.pano != nil {
+                DispatchQueue.main.async {
+                    self.imageView.image = self.pano
+                }
+            }
+        }
+    }
+    
+    private func getFilePathByName(name: String) -> String? {
+        
+        guard let path = Bundle.main.path(forResource: name, ofType: "jpg") else {
+            assertionFailure("Unable to found specified file")
+            return nil
+        }
+        return path.replacingOccurrences(of: "file://", with: "")
     }
     
 }
