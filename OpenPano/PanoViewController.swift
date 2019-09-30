@@ -88,7 +88,7 @@ class PanoViewController: UIViewController {
     private func stitchTestImages() {
         
         var imageNames: [String] = []
-        for i in (2...5).reversed() {
+        for i in (4...21).reversed() {
             // down - 0...5 6...10 12...21
             // Failed to stitch - 10...12
             // error: Failed to find hfactor
@@ -101,7 +101,7 @@ class PanoViewController: UIViewController {
         let imagePaths : [String] = imageNames.compactMap{ return getFilePathByName(name: $0) }
         
         self.stitchingQueue.async {
-            let image = StitchingWrapper.stitchImages(ofPaths: imagePaths)?.rotate(byDegrees: 90)
+            let image = StitchingWrapper.stitchImages(ofPaths: imagePaths)//?.rotate(byDegrees: 90)
             self.pano = image
             if self.pano != nil {
                 DispatchQueue.main.async {
