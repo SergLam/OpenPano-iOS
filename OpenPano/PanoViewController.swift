@@ -88,16 +88,22 @@ class PanoViewController: UIViewController {
     private func stitchTestImages() {
         
         var imageNames: [String] = []
-        for i in (4...21).reversed() {
-            // down - 0...5 6...10 12...21
-            // Failed to stitch - 10...12
-            // error: Failed to find hfactor
-            
-            // up 0...2 4...21
-            // Failed to stitch - 2...5
-            // error: Failed to find hfactor
-            imageNames.append("up-\(i)")
-        }
+        imageNames.append("bottom-0")
+        imageNames.append("bottom-1")
+        
+        imageNames.append("bottom-2")
+        imageNames.append("bottom-3")
+        
+//        for i in (4...21).reversed() {
+//            // down - 0...5 6...10 12...21
+//            // Failed to stitch - 10...12
+//            // error: Failed to find hfactor
+//
+//            // up 0...2 4...21
+//            // Failed to stitch - 2...5
+//            // error: Failed to find hfactor
+//            imageNames.append("up-\(i)")
+//        }
         let imagePaths : [String] = imageNames.compactMap{ return getFilePathByName(name: $0) }
         
         self.stitchingQueue.async {
