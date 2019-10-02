@@ -14,6 +14,9 @@ import libopano
 class PanoViewController: UIViewController {
     
     var pano : UIImage? = nil
+    
+    var pano1 : UIImage? = nil
+    var pano2 : UIImage? = nil
     @IBOutlet var imageView: UIImageView!
     
     let stitchingQueue = DispatchQueue.global(qos: .userInitiated)
@@ -87,12 +90,14 @@ class PanoViewController: UIViewController {
     
     private func stitchTestImages() {
         
-        var imageNames: [String] = []
-        imageNames.append("bottom-0")
-        imageNames.append("bottom-1")
+        var imageNames1: [String] = []
         
-        imageNames.append("bottom-2")
-        imageNames.append("bottom-3")
+        imageNames1.append("1")
+        imageNames1.append("2")
+        
+        var imageNames2: [String] = []
+        imageNames2.append("3")
+        imageNames2.append("4")
         
 //        for i in (4...21).reversed() {
 //            // down - 0...5 6...10 12...21
@@ -104,15 +109,23 @@ class PanoViewController: UIViewController {
 //            // error: Failed to find hfactor
 //            imageNames.append("up-\(i)")
 //        }
-        let imagePaths : [String] = imageNames.compactMap{ return getFilePathByName(name: $0) }
+        let imagePaths1 : [String] = imageNames1.compactMap{ return getFilePathByName(name: $0) }
         
         self.stitchingQueue.async {
-            let image = StitchingWrapper.stitchImages(ofPaths: imagePaths)//?.rotate(byDegrees: 90)
-            self.pano = image
-            if self.pano != nil {
-                DispatchQueue.main.async {
-                    self.imageView.image = self.pano
-                }
+            let image = StitchingWrapper.stitchImages(ofPaths: imagePaths1)//?.rotate(byDegrees: 90)
+            self.pano1 = image
+        }
+        
+        let imagePaths2 : [String] = imageNames2.compactMap{ return getFilePathByName(name: $0) }
+        
+        self.stitchingQueue.async {
+            let image = StitchingWrapper.stitchImages(ofPaths: imagePaths2)//?.rotate(byDegrees: 90)
+            self.pano2 = image
+        }
+        
+        if self.pano != nil {
+            DispatchQueue.main.async {
+                self.imageView.image = self.pano
             }
         }
     }
